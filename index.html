@@ -257,6 +257,52 @@
             color: #6b7280;
             font-style: italic;
         }
+
+        /* Estilos para o formulário de contato */
+.contact-form {
+    margin-top: 25px; /* Espaço entre o texto e o formulário */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os campos do formulário */
+    max-width: 450px; /* Limita a largura do formulário para não ficar muito esticado em telas grandes */
+    margin-left: auto; /* Centraliza o formulário */
+    margin-right: auto; /* Centraliza o formulário */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2); /* Um leve fundo escuro para destacar no azul */
+}
+
+.contact-form .section-text {
+    /* Pode redefinir o text-align se quiser, ou deixar como centralizado */
+    margin-bottom: 5px; /* Ajusta espaçamento do texto do formulário */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    border: none; /* Remove borda padrão */
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%; /* Ocupa a largura total do contêiner do formulário */
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+    color: #333; /* Cor do texto digitado */
+    outline: none; /* Remove a borda de foco padrão */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para um visual melhor */
+    transition: all 0.2s ease-in-out;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888; /* Cor do texto do placeholder */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Borda de foco azul */
+}
+
+/* O botão de envio já usa .cta-button, então já está estilizado */
         
         /* Media Queries para Responsividade */
         @media (max-width: 768px) {
