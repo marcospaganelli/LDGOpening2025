@@ -302,7 +302,7 @@
             box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Borda de foco azul */
         }
 
-        /* NOVOS ESTILOS PARA MENSAGENS DE FEEDBACK DO FORMULÁRIO */
+        /* Estilos para Mensagens de Feedback do Formulário */
         .form-message {
             margin-top: 20px;
             padding: 15px;
@@ -447,6 +447,8 @@
                 </p>
                 
                 <form name="contatoVaga" method="POST" data-netlify="true" class="contact-form">
+                    <input type="hidden" name="form-name" value="contatoVaga" /> 
+
                     <p class="section-text">
                         Preencha o formulário abaixo e entraremos em contato para garantir sua franquia na LDG 2025!
                     </p>
@@ -464,6 +466,62 @@
         </div>
     </div>
 
-  
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form');
+            const formFeedback = document.getElementById('form-feedback');
+            const submitButton = form.querySelector('.cta-button');
+
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário e o recarregamento da página
+
+                // Mostra que está carregando e desabilita o botão
+                submitButton.textContent = 'Enviando...';
+                submitButton.disabled = true;
+                formFeedback.style.display = 'none'; // Esconde mensagens anteriores
+
+                const formData = new FormData(form);
+
+                try {
+                    // Envia os dados do formulário para o endpoint do Vercel/Netlify Forms
+                    const response = await fetch(form.action || window.location.href, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json' // Indica que esperamos uma resposta JSON
+                        }
+                    });
+
+                    if (response.ok) {
+                        formFeedback.textContent = 'Sua candidatura foi enviada com sucesso! Em breve entraremos em contato.';
+                        formFeedback.className = 'form-message success'; // Adiciona classe de sucesso
+                        formFeedback.style.display = 'block';
+                        form.reset(); // Limpa o formulário
+                    } else {
+                        // Tenta ler a mensagem de erro do Vercel/Netlify
+                        const errorData = await response.json();
+                        let errorMessage = 'Ocorreu um erro ao enviar sua candidatura. Tente novamente mais tarde.';
+                        if (errorData && errorData.errors && errorData.errors.length > 0) {
+                            errorMessage = errorData.errors[0].message || errorMessage;
+                        } else if (errorData && errorData.message) {
+                             errorMessage = errorData.message;
+                        }
+                        formFeedback.textContent = errorMessage;
+                        formFeedback.className = 'form-message error'; // Adiciona classe de erro
+                        formFeedback.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Erro na submissão do formulário:', error);
+                    formFeedback.textContent = 'Houve um problema de conexão. Por favor, verifique sua internet e tente novamente.';
+                    formFeedback.className = 'form-message error'; // Adiciona classe de erro
+                    formFeedback.style.display = 'block';
+                } finally {
+                    // Reabilita o botão e restaura o texto
+                    submitButton.textContent = 'Enviar Candidatura';
+                    submitButton.disabled = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
