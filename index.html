@@ -374,10 +374,17 @@
                 <p class="section-text">
                     Esta é uma <span class="highlight">oportunidade única</span> de se juntar a uma das ligas de fantasy football mais tradicionais e divertidas do Brasil. Se você tem o perfil que procuramos e está pronto para viver momentos épicos entre a glória e a zueira, não perca tempo!
                 </p>
-                <p class="section-text">
-                    <span class="highlight">A vaga é limitada e será preenchida rapidamente.</span> Entre em contato conosco agora mesmo e garante sua franquia na LDG 2025!
-                </p>
-                <a href="https://wa.me/5519996317836" class="cta-button">Clique aqui para conversar conosco no WhatsApp!</a>
+                <form name="contatoVaga" method="POST" data-netlify="true" class="contact-form">
+        <p class="section-text">
+            Preencha o formulário abaixo e entraremos em contato para garantir sua franquia na LDG 2025!
+        </p>
+        <input type="text" name="nome" placeholder="Seu Nome" required>
+        <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+        <input type="text" name="time" placeholder="Franquia que você torce" required>
+        <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>            
+        <textarea name="mensagem" placeholder="Fale um pouco sobre sua experiência com Fantasy Football e por que você quer entrar na LDG." rows="4"></textarea>
+        <button type="submit" class="cta-button">Enviar Candidatura</button>
+    </form>
             </div>
         </div>
     </div>
