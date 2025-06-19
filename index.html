@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaga Disponível - LDG Fantasy Football</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Importa fontes do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .main-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 2.5em;
+            font-weight: 400;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            border-radius: 10px;
+            background: rgba(248, 249, 250, 0.8);
+            border-left: 5px solid #fbbf24;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.4em;
+            font-weight: 400;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-title::before {
+            content: '🏆';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        .section-title.about::before { content: '🏈'; }
+        .section-title.position::before { content: '👑'; }
+        .section-title.qualifications::before { content: '📋'; }
+        .section-title.requirements::before { content: '⚡'; }
+        .section-title.benefits::before { content: '🎁'; }
+        .section-title.cta::before { content: '🚀'; } /* Icone da seção de CTA */
+        
+        .section-text {
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        li::before {
+            content: '▶';
+            color: #fbbf24;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Estilo para a seção de Chamada para Ação (CTA) */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white; /* Cor padrão, mas será sobrescrita pelos elementos internos */
+            text-align: center;
+            border: none;
+        }
+
+        /* CORREÇÃO AQUI: Garante que o texto dentro da cta-section seja branco */
+        .cta-section .section-title,
+        .cta-section .section-text {
+            color: white; 
+        }
+
+/* --- NOVO BLOCO CSS: Destaque amarelo para spans na CTA Section --- */
+.cta-section .highlight {
+    color: #fbbf24; /* O amarelo mais para laranja que você pediu */
+}
+/* --- FIM DO NOVO BLOCO --- */
+        
+        .cta-button {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1e3a8a;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: #f59e0b;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 5px;
+            min-width: 120px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        /* Estilo para a seção de destaque da liga com a foto */
+        .league-showcase {
+            background: rgba(30, 58, 138, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .league-photo {
+            width: 100%;
+            height: 200px; /* Altura fixa para a área da foto */
+            background: none; /* Remove qualquer background anterior caso houvesse */
+            border-radius: 8px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            display: flex; /* Para centralizar a imagem dentro da div */
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Garante que a imagem não "escape" da div */
+        }
+        
+        .league-photo:hover {
+            opacity: 1;
+        }
+
+        /* CORREÇÃO AQUI: Estilo para a imagem DENTRO da div .league-photo */
+        .league-photo img {
+            width: 100%; /* Faz a imagem ocupar 100% da largura da div pai */
+            height: 100%; /* Faz a imagem ocupar 100% da altura da div pai */
+            object-fit: cover; /* **ESSENCIAL**: Ajusta a imagem para cobrir a área, cortando o que for necessário, sem distorcer. */
+            border-radius: 8px; /* Mantém as bordas arredondadas na imagem também */
+        }
+        
+        .league-caption {
+            font-size: 0.9em;
+            color: #6b7280;
+            font-style: italic;
+        }
+        
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .main-title {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section {
+                padding: 20px 15px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">VAGA DISPONÍVEL: GERENTE DE FRANQUIA</h1>
+            <p class="subtitle">LDG - Liga da Zueira e da Glória | Oportunidade Única para Comandar seu Destino</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">8º</span>
+                    <span class="stat-label">Ano da Liga</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Franquias</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Vaga Disponível</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title about">Sobre a LDG</h2>
+                <p class="section-text">
+                    Fundada em <span class="highlight">2017</span>, a <span class="highlight">LDG </span> não é apenas mais uma liga de fantasy football. Somos uma <span class="highlight">comunidade consolidada</span> que combina competitividade de alto nível com momentos épicos de descontração. Com <span class="highlight">8 anos de história</span> e tradições únicas, oferecemos uma experiência completa que vai muito além do fantasy tradicional. Um grupo seleto de GMs que preza pelo entretenimento e caos e que podem desfrutar da melhor experiência de fantasy football do Brasil.
+                </p>
+                <p class="section-text">
+                    Nossa liga se destaca pelos <span class="highlight">eventos presenciais exclusivos</span>, incluindo drafts ao vivo para membros de Campinas e região, cerimônias de premiação com troféus e medalhas físicas, e o aguardado <span class="highlight">LDG Awards</span> anual, onde celebramos não apenas os campeões, mas também os melhores (e piores) memes da temporada.
+                </p>
+                <div class="league-showcase">
+                    <div class="league-photo">
+                        <img src="https://i.imgur.com/4gU5yPT.jpeg" alt="LDG Awards 2023">
+                    </div>
+                    <p class="league-caption">LDG Awards 2023/24 - momentos épicos de celebração e confraternização da LDG</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title position">A Vaga: O Comandante da Sua Próxima Franquia</h2>
+                <p class="section-text">
+                    Procuramos um <span class="highlight">General Manager</span> experiente e apaixonado para assumir o controle de uma das 12 franquias da LDG. Esta é sua oportunidade de fazer parte de uma liga <span class="highlight">competitiva e bem estruturada</span>, com regras balanceadas, sistema de dados históricos completo e uma comunidade ativa.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title qualifications">Qualificações Essenciais para o Sucesso</h2>
+                <ul>
+                    <li><span class="highlight">Experiência mínima de 2 anos</span> em fantasy football OU acompanhamento ativo da NFL por anos com conhecimento básico de fantasy</li>
+                    <li><span class="highlight">Conhecimento sólido da NFL:</span> regras do jogo, principais jogadores e dinâmicas das temporadas</li>
+                    <li><span class="highlight">Compreensão de conceitos fundamentais:</span> waivers, trades, add/drop, formatos de pontuação</li>
+                    <li><span class="highlight">Diferenciais:</span> odiar time modinha, policiais e sulistas</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title requirements">Requisitos para Embarcar nessa Jornada</h2>
+                <ul>
+                    <li><span class="highlight">Alto nível de comprometimento:</span> atividade constante durante toda a temporada</li>
+                    <li><span class="highlight">Pró-atividade em negociações:</span> disposição para propor e avaliar trades regularmente</li>
+                    <li><span class="highlight">Gestão ativa do roster:</span> monitoramento semanal de add/drops e ajustes de lineup</li>
+                    <li><span class="highlight">Interação social genuína:</span> participação nas conversas do grupo, memes, zoeiras, xingar os colegas e times lixos</li>
+                    <li><span class="highlight">Aceitação das regras específicas:</span> formato 12-team half PPR, TE Premium (full PPR), sem kickers, waiver em modo leilão (FAAB)</li>
+                    <li><span class="highlight">Personalidade aberta:</span> disposição para construir amizades e rivalidades sem rasgar</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title benefits">O Que Oferecemos (Além da Glória Eterna)</h2>
+                <ul>
+                    <li><span class="highlight">Premiação física:</span> medalhas e troféus para os vencedores da temporada</li>
+                    <li><span class="highlight">Eventos presenciais exclusivos:</span> draft ao vivo e cerimônia de premiação</li>
+                    <li><span class="highlight">LDG Awards:</span> celebração épica com premiações aos piores do ano e momentos memoráveis</li>
+                    <li><span class="highlight">Dashboard personalizado:</span> acesso completo a dados históricos e estatísticas detalhadas</li>
+                    <li><span class="highlight">Franquia customizada:</span> nome e logo personalizados para sua identidade única</li>
+                    <li><span class="highlight">Comunidade consolidada:</span> grupo ativo de amigos que se conhecem há anos</li>
+                    <li><span class="highlight">Liga competitiva balanceada:</span> regras testadas e aprovadas ao longo de 8 temporadas</li>
+                </ul>
+            </div>
+
+            <div class="section cta-section">
+                <h2 class="section-title cta">Pronto para Aceitar o Desafio?</h2>
+                <p class="section-text">
+                    Esta é uma <span class="highlight">oportunidade única</span> de se juntar a uma das ligas de fantasy football mais tradicionais e divertidas do Brasil. Se você tem o perfil que procuramos e está pronto para viver momentos épicos entre a glória e a zueira, não perca tempo!
+                </p>
+                <p class="section-text">
+                    <span class="highlight">A vaga é limitada e será preenchida rapidamente.</span> Entre em contato conosco agora mesmo e garante sua franquia na LDG 2025!
+                </p>
+                <a href="https://wa.me/5519996317836" class="cta-button">Clique aqui para conversar conosco no WhatsApp!</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
