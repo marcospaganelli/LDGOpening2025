@@ -158,17 +158,16 @@
             border: none;
         }
 
-        /* CORREÇÃO AQUI: Garante que o texto dentro da cta-section seja branco */
+        /* Garante que o texto dentro da cta-section seja branco */
         .cta-section .section-title,
         .cta-section .section-text {
             color: white; 
         }
 
-/* --- NOVO BLOCO CSS: Destaque amarelo para spans na CTA Section --- */
-.cta-section .highlight {
-    color: #fbbf24; /* O amarelo mais para laranja que você pediu */
-}
-/* --- FIM DO NOVO BLOCO --- */
+        /* Destaque amarelo para spans na CTA Section */
+        .cta-section .highlight {
+            color: #fbbf24; /* O amarelo mais para laranja que você pediu */
+        }
         
         .cta-button {
             display: inline-block;
@@ -182,6 +181,8 @@
             margin-top: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer; /* Indica que é clicável */
+            border: none; /* Remove borda padrão de botão */
         }
         
         .cta-button:hover {
@@ -244,7 +245,7 @@
             opacity: 1;
         }
 
-        /* CORREÇÃO AQUI: Estilo para a imagem DENTRO da div .league-photo */
+        /* Estilo para a imagem DENTRO da div .league-photo */
         .league-photo img {
             width: 100%; /* Faz a imagem ocupar 100% da largura da div pai */
             height: 100%; /* Faz a imagem ocupar 100% da altura da div pai */
@@ -259,51 +260,70 @@
         }
 
         /* Estilos para o formulário de contato */
-.contact-form {
-    margin-top: 25px; /* Espaço entre o texto e o formulário */
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espaço entre os campos do formulário */
-    max-width: 450px; /* Limita a largura do formulário para não ficar muito esticado em telas grandes */
-    margin-left: auto; /* Centraliza o formulário */
-    margin-right: auto; /* Centraliza o formulário */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.2); /* Um leve fundo escuro para destacar no azul */
-}
+        .contact-form {
+            margin-top: 25px; /* Espaço entre o texto e o formulário */
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaço entre os campos do formulário */
+            max-width: 450px; /* Limita a largura do formulário para não ficar muito esticado em telas grandes */
+            margin-left: auto; /* Centraliza o formulário */
+            margin-right: auto; /* Centraliza o formulário */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2); /* Um leve fundo escuro para destacar no azul */
+        }
 
-.contact-form .section-text {
-    /* Pode redefinir o text-align se quiser, ou deixar como centralizado */
-    margin-bottom: 5px; /* Ajusta espaçamento do texto do formulário */
-}
+        .contact-form .section-text {
+            margin-bottom: 5px; /* Ajusta espaçamento do texto do formulário */
+        }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    padding: 12px;
-    border: none; /* Remove borda padrão */
-    border-radius: 8px;
-    font-size: 1em;
-    width: 100%; /* Ocupa a largura total do contêiner do formulário */
-    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
-    color: #333; /* Cor do texto digitado */
-    outline: none; /* Remove a borda de foco padrão */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para um visual melhor */
-    transition: all 0.2s ease-in-out;
-}
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            padding: 12px;
+            border: none; /* Remove borda padrão */
+            border-radius: 8px;
+            font-size: 1em;
+            width: 100%; /* Ocupa a largura total do contêiner do formulário */
+            background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+            color: #333; /* Cor do texto digitado */
+            outline: none; /* Remove a borda de foco padrão */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para um visual melhor */
+            transition: all 0.2s ease-in-out;
+        }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: #888; /* Cor do texto do placeholder */
-}
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #888; /* Cor do texto do placeholder */
+        }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Borda de foco azul */
-}
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Borda de foco azul */
+        }
 
-/* O botão de envio já usa .cta-button, então já está estilizado */
-        
+        /* NOVOS ESTILOS PARA MENSAGENS DE FEEDBACK DO FORMULÁRIO */
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none; /* Começa escondido, o JS vai mostrar */
+            text-align: center;
+        }
+
+        .form-message.success {
+            background-color: #d4edda; /* Verde claro */
+            color: #155724; /* Verde escuro */
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background-color: #f8d7da; /* Vermelho claro */
+            color: #721c24; /* Vermelho escuro */
+            border: 1px solid #f5c6cb;
+        }
+
         /* Media Queries para Responsividade */
         @media (max-width: 768px) {
             .container {
@@ -329,6 +349,11 @@
             .stats {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .contact-form {
+                max-width: 100%; /* Em telas menores, ocupa mais largura */
+                padding: 15px;
             }
         }
     </style>
@@ -418,21 +443,83 @@
             <div class="section cta-section">
                 <h2 class="section-title cta">Pronto para Aceitar o Desafio?</h2>
                 <p class="section-text">
-                    Esta é uma <span class="highlight">oportunidade única</span> de se juntar a uma das ligas de fantasy football mais tradicionais e divertidas do Brasil. Se você tem o perfil que procuramos e está pronto para viver momentos épicos entre a glória e a zueira, não perca tempo!
+                    Esta é uma <span class="highlight">oportunidade única</span> de se juntar a uma das ligas de fantasy football mais tradicionais e divertidas do Brasil. Se você tem o perfil que procuramos e está pronto para viver momentos épicos entre a glória e a zoeira, não perca tempo!
                 </p>
+                
                 <form name="contatoVaga" method="POST" data-netlify="true" class="contact-form">
-        <p class="section-text">
-            Preencha o formulário abaixo e entraremos em contato para garantir sua franquia na LDG 2025!
-        </p>
-        <input type="text" name="nome" placeholder="Seu Nome" required>
-        <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
-        <input type="text" name="time" placeholder="Franquia que você torce" required>
-        <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>            
-        <textarea name="mensagem" placeholder="Fale um pouco sobre sua experiência com Fantasy Football e por que você quer entrar na LDG." rows="4"></textarea>
-        <button type="submit" class="cta-button">Enviar Candidatura</button>
-    </form>
+                    <p class="section-text">
+                        Preencha o formulário abaixo e entraremos em contato para garantir sua franquia na LDG 2025!
+                    </p>
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+                    <input type="text" name="time" placeholder="Franquia que você torce" required>
+                    <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>         
+                    <textarea name="mensagem" placeholder="Fale um pouco sobre sua experiência com Fantasy Football e por que você quer entrar na LDG." rows="4"></textarea>
+                    <button type="submit" class="cta-button">Enviar Candidatura</button>
+                </form>
+
+                <div id="form-feedback" class="form-message"></div>
+
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form');
+            const formFeedback = document.getElementById('form-feedback');
+            const submitButton = form.querySelector('.cta-button');
+
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário e o recarregamento da página
+
+                // Mostra que está carregando
+                submitButton.textContent = 'Enviando...';
+                submitButton.disabled = true;
+                formFeedback.style.display = 'none'; // Esconde mensagens anteriores
+
+                const formData = new FormData(form);
+
+                try {
+                    // Envia os dados do formulário para o endpoint do Vercel/Netlify Forms
+                    // A action padrão é a própria página, que o Netlify/Vercel interceptam
+                    const response = await fetch(form.action || window.location.href, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json' // Indica que esperamos uma resposta JSON
+                        }
+                    });
+
+                    if (response.ok) {
+                        formFeedback.textContent = 'Sua candidatura foi enviada com sucesso! Em breve entraremos em contato.';
+                        formFeedback.className = 'form-message success'; // Adiciona classe de sucesso
+                        formFeedback.style.display = 'block';
+                        form.reset(); // Limpa o formulário
+                    } else {
+                        // Tenta ler a mensagem de erro do Vercel/Netlify
+                        const errorData = await response.json();
+                        let errorMessage = 'Ocorreu um erro ao enviar sua candidatura. Tente novamente mais tarde.';
+                        if (errorData && errorData.errors && errorData.errors.length > 0) {
+                            errorMessage = errorData.errors[0].message || errorMessage;
+                        } else if (errorData && errorData.message) {
+                             errorMessage = errorData.message;
+                        }
+                        formFeedback.textContent = errorMessage;
+                        formFeedback.className = 'form-message error'; // Adiciona classe de erro
+                        formFeedback.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Erro na submissão do formulário:', error);
+                    formFeedback.textContent = 'Houve um problema de conexão. Por favor, verifique sua internet e tente novamente.';
+                    formFeedback.className = 'form-message error'; // Adiciona classe de erro
+                    formFeedback.style.display = 'block';
+                } finally {
+                    submitButton.textContent = 'Enviar Candidatura';
+                    submitButton.disabled = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
