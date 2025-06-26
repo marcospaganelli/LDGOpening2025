@@ -1,377 +1,473 @@
-<!DOCTYPE html>
+<!DOCTYPE html>More actions
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vaga Disponível - LDG Fantasy Football</title>
-<style>
-/* Reset básico */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaga Disponível - LDG Fantasy Football</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* Importa fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Roboto:wght@300;400;500;700&display=swap');
+        /* Importa fontes do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Roboto:wght@300;400;500;700&display=swap');
 
-body {
-font-family: 'Roboto', sans-serif;
-line-height: 1.6;
-background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%);
-min-height: 100vh;
-padding: 20px;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-.container {
-max-width: 800px;
-margin: 0 auto;
-background: rgba(255, 255, 255, 0.95);
-border-radius: 15px;
-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-overflow: hidden;
-backdrop-filter: blur(10px);
-}
+        .container {
+            max-width: 800px;
+            max-width: 800px; /* Mantém 800px para desktop */
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
 
-.header {
-background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-color: white;
-padding: 40px 30px;
-text-align: center;
-position: relative;
-overflow: hidden;
-}
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.header::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: 
-linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)),
-url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
-animation: float 20s infinite ease-in-out;
-}
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite ease-in-out;
+        }
 
-@keyframes float {
-0%, 100% { transform: translateY(0px); }
-50% { transform: translateY(-10px); }
-}
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
 
-.main-title {
-font-family: 'Anton', sans-serif;
-font-size: 2.5em;
-font-weight: 400;
-margin-bottom: 10px;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-position: relative;
-z-index: 1;
-letter-spacing: 1px;
-}
+        .main-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 2.5em;
+            font-weight: 400;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 1px;
+        }
 
-.subtitle {
-font-size: 1.2em;
-opacity: 0.9;
-position: relative;
-z-index: 1;
-}
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
 
-.content {
-padding: 40px 30px;
-}
+        .content {
+            padding: 40px 30px;
+        }
 
-.section {
-margin-bottom: 35px;
-padding: 25px;
-border-radius: 10px;
-background: rgba(248, 249, 250, 0.8);
-border-left: 5px solid #fbbf24;
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            border-radius: 10px;
+            background: rgba(248, 249, 250, 0.8);
+            border-left: 5px solid #fbbf24;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-.section:hover {
-transform: translateY(-3px);
-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
+        .section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
 
-.section-title {
-font-family: 'Anton', sans-serif;
-font-size: 1.4em;
-font-weight: 400;
-color: #1e3a8a;
-margin-bottom: 15px;
-display: flex;
-align-items: center;
-letter-spacing: 0.5px;
-}
+        .section-title {
+            font-family: 'Anton', sans-serif;
+            font-size: 1.4em;
+            font-weight: 400;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
 
-.section-title::before {
-content: '🏆';
-margin-right: 10px;
-font-size: 1.2em;
-}
+        .section-title::before {
+            content: '🏆';
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
 
-.section-title.about::before { content: '🏈'; }
-.section-title.position::before { content: '👑'; }
-.section-title.qualifications::before { content: '📋'; }
-.section-title.requirements::before { content: '⚡'; }
-.section-title.benefits::before { content: '🎁'; }
-.section-title.cta::before { content: '🚀'; } /* Icone da seção de CTA */
+        .section-title.about::before { content: '🏈'; }
+        .section-title.position::before { content: '👑'; }
+        .section-title.qualifications::before { content: '📋'; }
+        .section-title.requirements::before { content: '⚡'; }
+        .section-title.benefits::before { content: '🎁'; }
+        .section-title.cta::before { content: '🚀'; } /* Icone da seção de CTA */
 
-.section-text {
-color: #333;
-margin-bottom: 15px;
-text-align: center;
-}
+        .section-text {
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
 
-.highlight {
-font-weight: bold;
-color: #1e3a8a;
-}
+        .highlight {
+            font-weight: bold;
+            color: #1e3a8a;
+        }
 
-ul {
-list-style: none;
-padding-left: 0;
-}
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
-li {
-padding: 8px 0;
-position: relative;
-padding-left: 25px;
-}
+        li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
 
-li::before {
-content: '▶';
-color: #fbbf24;
-font-weight: bold;
-position: absolute;
-left: 0;
-}
+        li::before {
+            content: '▶';
+            color: #fbbf24;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
 
-/* Estilo para a seção de Chamada para Ação (CTA) */
-.cta-section {
-background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-color: white; /* Cor padrão, mas será sobrescrita pelos elementos internos */
-text-align: center;
-border: none;
-}
+        /* Estilo para a seção de Chamada para Ação (CTA) */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white; /* Cor padrão, mas será sobrescrita pelos elementos internos */
+            text-align: center;
+            border: none;
+        }
 
-/* Garante que o texto dentro da cta-section seja branco */
-.cta-section .section-title,
-.cta-section .section-text {
-color: white; 
-}
+        /* Garante que o texto dentro da cta-section seja branco */
+        .cta-section .section-title,
+        .cta-section .section-text {
+            color: white; 
+        }
 
-/* Destaque amarelo para spans na CTA Section */
-.cta-section .highlight {
-color: #fbbf24; /* O amarelo mais para laranja que você pediu */
-}
+        /* Destaque amarelo para spans na CTA Section */
+        .cta-section .highlight {
+            color: #fbbf24; /* O amarelo mais para laranja que você pediu */
+        }
 
-.cta-button {
-display: inline-block;
-background: #fbbf24;
-color: #1e3a8a;
-padding: 15px 30px;
-border-radius: 50px;
-text-decoration: none;
-font-weight: bold;
-font-size: 1.1em;
-margin-top: 20px;
-transition: all 0.3s ease;
-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-cursor: pointer; /* Indica que é clicável */
-border: none; /* Remove borda padrão de botão */
-}
+        .cta-button {
+            display: inline-block;
+            background: #fbbf24;
+            color: #1e3a8a;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer; /* Indica que é clicável */
+            border: none; /* Remove borda padrão de botão */
+        }
 
-.cta-button:hover {
-transform: translateY(-2px);
-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-background: #f59e0b;
-}
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            background: #f59e0b;
+        }
 
-.stats {
-display: flex;
-justify-content: space-around;
-margin: 20px 0;
-flex-wrap: wrap;
-}
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
 
-.stat-item {
-text-align: center;
-padding: 10px;
-background: rgba(255, 255, 255, 0.1);
-border-radius: 10px;
-margin: 5px;
-min-width: 120px;
-}
+        .stat-item {
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 5px;
+            min-width: 120px;
+        }
 
-.stat-number {
-font-size: 2em;
-font-weight: bold;
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
             font-family: 'Anton', sans-serif;
             color: #f59e0b;
-display: block;
+            display: block;
             opacity: 0.9;
-}
+        }
 
-.stat-label {
-font-size: 0.9em;
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Estilo para a seção de destaque da liga com a foto */
+        .league-showcase {
+            background: rgba(30, 58, 138, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            /* REMOVIDO: flex: 0 10 auto; - será controlado por flex-wrap no container e media queries */
+        }
+
+        .league-photo {
+            width: 100%;
+            height: auto;
+            height: auto; 
+            background: none;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 10px;
             opacity: 0.8;
-            opacity: 0.9;
-}
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-/* Estilo para a seção de destaque da liga com a foto */
-.league-showcase {
-background: rgba(30, 58, 138, 0.05);
-border-radius: 10px;
-padding: 20px;
-margin: 20px 0;
-text-align: center;
-}
+        .league-photo-vertical {
+            width: 100%;
+            height: auto;
+            height: auto; 
+            background: none;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-.league-photo {
-width: 100%;
-height: 200px; /* Altura fixa para a área da foto */
-background: none; /* Remove qualquer background anterior caso houvesse */
-border-radius: 8px;
-margin-bottom: 10px;
-opacity: 0.8;
-transition: opacity 0.3s ease;
-display: flex; /* Para centralizar a imagem dentro da div */
-justify-content: center;
-align-items: center;
-overflow: hidden; /* Garante que a imagem não "escape" da div */
-}
+        .league-photo:hover {
+            opacity: 1;
+        }
 
-.league-photo:hover {
-opacity: 1;
-}
+        .league-photo-vertical:hover {
+            opacity: 1;
+        }
 
-/* Estilo para a imagem DENTRO da div .league-photo */
-.league-photo img {
-width: 100%; /* Faz a imagem ocupar 100% da largura da div pai */
-height: 100%; /* Faz a imagem ocupar 100% da altura da div pai */
-object-fit: cover; /* **ESSENCIAL**: Ajusta a imagem para cobrir a área, cortando o que for necessário, sem distorcer. */
-border-radius: 8px; /* Mantém as bordas arredondadas na imagem também */
-}
+        /* Estilo para a imagem DENTRO da div .league-photo */
+        .league-photo img {
+            width: 100%;
+            height: 200px; /* Altura fixa para as imagens horizontais */
+            object-fit: cover;
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            border-radius: 8px;
+        }
 
-.league-caption {
-font-size: 0.9em;
-color: #6b7280;
-font-style: italic;
-}
+        .league-photo-vertical img {
+            width: 100%; /* ALTERADO: Para ocupar a largura total do contêiner em mobile */
+            height: auto; /* ALTERADO: Altura automática para manter proporção */
+            max-height: 250px; /* NOVO: Limita a altura máxima para imagens verticais */
+            object-fit: contain; /* ALTERADO: Garante que a imagem inteira seja visível */
+            border-radius: 8px;
+        }
 
-/* Estilos para o formulário de contato */
-.contact-form {
-margin-top: 25px; /* Espaço entre o texto e o formulário */
-display: flex;
-flex-direction: column;
-gap: 15px; /* Espaço entre os campos do formulário */
-max-width: 450px; /* Limita a largura do formulário para não ficar muito esticado em telas grandes */
-margin-left: auto; /* Centraliza o formulário */
-margin-right: auto; /* Centraliza o formulário */
-padding: 20px; /* Espaçamento interno */
-border-radius: 10px;
-background: rgba(0, 0, 0, 0.2); /* Um leve fundo escuro para destacar no azul */
-}
+        .gallery-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap; /* ALTERADO: Permite que os itens quebrem para a próxima linha */
+            overflow-x: auto; /* Mantém a rolagem horizontal se necessário */
+            overflow-x: auto; 
+            padding-bottom: 10px;
+        }
 
-.contact-form .section-text {
-margin-bottom: 5px; /* Ajusta espaçamento do texto do formulário */
-}
+        /* NOVO: Ajuste para os itens da galeria para que não encolham agressivamente */
+        .league-showcase {
+            flex: 0 0 auto; /* Não cresce, não encolhe, baseia-se no conteúdo */
+            min-width: 250px; /* Adiciona um tamanho mínimo para as fotos no desktop */
+            flex: 0 0 auto; 
+            min-width: 250px; 
+        }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-padding: 12px;
-border: none; /* Remove borda padrão */
-border-radius: 8px;
-font-size: 1em;
-width: 100%; /* Ocupa a largura total do contêiner do formulário */
-background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
-color: #333; /* Cor do texto digitado */
-outline: none; /* Remove a borda de foco padrão */
-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para um visual melhor */
-transition: all 0.2s ease-in-out;
-}
+        .league-caption {
+            font-size: 0.9em;
+            color: #6b7280;
+            font-style: italic;
+        }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-color: #888; /* Cor do texto do placeholder */
-}
+        /* Estilos para o formulário de contato */
+        .contact-form {
+            margin-top: 25px; /* Espaço entre o texto e o formulário */
+            margin-top: 25px; 
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espaço entre os campos do formulário */
+            max-width: 450px; /* Limita a largura do formulário para não ficar muito esticado em telas grandes */
+            margin-left: auto; /* Centraliza o formulário */
+            margin-right: auto; /* Centraliza o formulário */
+            padding: 20px; /* Espaçamento interno */
+            gap: 15px; 
+            max-width: 450px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            padding: 20px; 
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2); /* Um leve fundo escuro para destacar no azul */
+            background: rgba(0, 0, 0, 0.2); 
+        }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Borda de foco azul */
-}
+        .contact-form .section-text {
+            margin-bottom: 5px; /* Ajusta espaçamento do texto do formulário */
+            margin-bottom: 5px; 
+        }
 
-/* Estilos para Mensagens de Feedback do Formulário */
-.form-message {
-margin-top: 20px;
-padding: 15px;
-border-radius: 8px;
-font-weight: bold;
-display: none; /* Começa escondido, o JS vai mostrar */
-text-align: center;
-}
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            padding: 12px;
+            border: none; /* Remove borda padrão */
+            border: none; 
+            border-radius: 8px;
+            font-size: 1em;
+            width: 100%; /* Ocupa a largura total do contêiner do formulário */
+            background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+            color: #333; /* Cor do texto digitado */
+            outline: none; /* Remove a borda de foco padrão */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para um visual melhor */
+            width: 100%; 
+            background-color: rgba(255, 255, 255, 0.95); 
+            color: #333; 
+            outline: none; 
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+            transition: all 0.2s ease-in-out;
+        }
 
-.form-message.success {
-background-color: #d4edda; /* Verde claro */
-color: #155724; /* Verde escuro */
-border: 1px solid #c3e6cb;
-}
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #888; /* Cor do texto do placeholder */
+            color: #888; 
+        }
 
-.form-message.error {
-background-color: #f8d7da; /* Vermelho claro */
-color: #721c24; /* Vermelho escuro */
-border: 1px solid #f5c6cb;
-}
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Borda de foco azul */
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+        }
 
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-.container {
-margin: 10px;
-}
+        /* Estilos para Mensagens de Feedback do Formulário */
+        .form-message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none; /* Começa escondido, o JS vai mostrar */
+            display: none; 
+            text-align: center;
+        }
 
-.header {
-padding: 30px 20px;
-}
+        .form-message.success {
+            background-color: #d4edda; /* Verde claro */
+            color: #155724; /* Verde escuro */
+            background-color: #d4edda; 
+            color: #155724; 
+            border: 1px solid #c3e6cb;
+        }
 
-.main-title {
-font-size: 2em;
-}
+        .form-message.error {
+            background-color: #f8d7da; /* Vermelho claro */
+            color: #721c24; /* Vermelho escuro */
+            background-color: #f8d7da; 
+            color: #721c24; 
+            border: 1px solid #f5c6cb;
+        }
 
-.content {
-padding: 30px 20px;
-}
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
 
-.section {
-padding: 20px 15px;
-}
+            .header {
+                padding: 30px 20px;
+            }
 
-.stats {
-flex-direction: column;
-align-items: center;
-}
+            .main-title {
+                font-size: 2em;
+            }
 
-.contact-form {
-max-width: 100%; /* Em telas menores, ocupa mais largura */
-padding: 15px;
-}
-}
-</style>
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section {
+                padding: 20px 15px;
+                /* Adiciona largura para seções em mobile */
+                width: calc(100% - 30px); /* 100% da largura do .content menos o padding horizontal */
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            /* NOVO/ALTERADO: Força os itens da galeria a serem 100% largos em telas pequenas */
+            /* Força os itens da galeria a serem 100% largos em telas pequenas */
+            .league-showcase {
+                flex: 0 0 100%; /* Cada item ocupa a largura total */
+                min-width: unset; /* Remove o min-width para mobile */
+                flex: 0 0 100%; 
+                min-width: unset; 
+            }
+
+            .league-photo img,
+            .league-photo-vertical img {
+                width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
+                height: 180px; /* Ajuste a altura conforme necessário para o mobile */
+                object-fit: cover; /* Mantém o corte se a proporção não for exata */
+                width: 100%; 
+                height: 180px; 
+                object-fit: cover; 
+            }
+
+            .contact-form {
+                max-width: 100%; /* Em telas menores, ocupa mais largura */
+                max-width: 100%; 
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1 class="main-title">VAGA DISPONÍVEL: LDG GENERAL MANAGER</h1>
-<p class="subtitle">Oportunidade única de se juntar à maior liga do Brasil</p>
+    <div class="container">
+        <div class="header">
+            <h1 class="main-title">VAGA DISPONÍVEL: LDG GENERAL MANAGER</h1>
+            <p class="subtitle">Oportunidade única de se juntar à maior liga do Brasil</p>
 
-<div class="stats">
-<div class="stat-item">
-<span class="stat-number">8º</span>
-                    <span class="stat-label">Ano da Liga</span>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">8º</span>
                     <span class="stat-label">Ano da LDG</span>
                 </div>
                 <div class="stat-item">
@@ -381,164 +477,177 @@ padding: 15px;
                 <div class="stat-item">
                     <span class="stat-number">130.893</span>
                     <span class="stat-label">Pontos</span>
-</div>
-<div class="stat-item">
-                    <span class="stat-number">12</span>
-                    <span class="stat-label">Franquias</span>
+                </div>
+                <div class="stat-item">
                     <span class="stat-number">10</span>
                     <span class="stat-label">Eventos presenciais</span>
-</div>
-<div class="stat-item">
-<span class="stat-number">1</span>
-<span class="stat-label">Vaga Disponível</span>
-</div>
-</div>
-</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Vaga Disponível</span>
+                </div>
+            </div>
+        </div>
 
-<div class="content">
-<div class="section">
-<h2 class="section-title about">Sobre a LDG</h2>
-<p class="section-text">
-Fundada em <span class="highlight">2017</span>, a <span class="highlight">LDG </span> não é apenas mais uma liga de fantasy football. Somos uma <span class="highlight">comunidade consolidada</span> que combina competitividade de alto nível com momentos épicos de descontração. Com <span class="highlight">8 anos de história</span> e tradições únicas, oferecemos uma experiência completa que vai muito além do fantasy tradicional. Um grupo seleto de GMs que preza pelo entretenimento e caos e que podem desfrutar da melhor experiência de fantasy football do Brasil.
-</p>
-<p class="section-text">
-Nossa liga se destaca pelos <span class="highlight">eventos presenciais exclusivos</span>, incluindo drafts ao vivo para membros de Campinas e região, cerimônias de premiação com troféus e medalhas físicas, e o aguardado <span class="highlight">LDG Awards</span> anual, onde celebramos não apenas os campeões, mas também os melhores (e piores) memes da temporada.
-</p>
-<div class="league-showcase">
-<div class="league-photo">
-<img src="https://i.imgur.com/4gU5yPT.jpeg" alt="LDG Awards 2023">
-</div>
-<p class="league-caption">LDG Awards 2023/24 - momentos épicos de celebração e confraternização da LDG</p>
-</div>
-</div>
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title about">Sobre nós</h2>
+                <div class="league-photo-vertical">
+                            <img src="https://i.imgur.com/qqQBbsK.png" alt="Logo LDG">
+                </div>
+                <p class="section-text">
+                    Fundada em <span class="highlight">2017</span>, a <span class="highlight">LDG </span> não é apenas mais uma liga de fantasy football. Somos uma <span class="highlight">comunidade consolidada</span> que combina competitividade de alto nível com momentos épicos de descontração. Com <span class="highlight">8 anos de história</span> e tradições únicas, oferecemos uma experiência completa que vai muito além do fantasy tradicional. Um grupo seleto de GMs que preza pelo entretenimento e caos e que podem desfrutar da melhor experiência de fantasy football do Brasil.
+                </p>
+                <p class="section-text">
+                    Nossa liga se destaca pelos <span class="highlight">eventos presenciais exclusivos</span>, incluindo drafts ao vivo para membros de Campinas e região, cerimônias de premiação com troféus e medalhas físicas, e o aguardado <span class="highlight">LDG Awards</span> anual, onde celebramos não apenas os campeões, mas também os melhores (e piores) memes da temporada.
+                </p>
 
-<div class="section">
-                <h2 class="section-title position">A Vaga: O Comandante da Sua Próxima Franquia</h2>
+                <div class="gallery-container">
+                    <div class="league-showcase">
+                    <div class="league-photo-vertical">
+                            <img src="https://i.imgur.com/YtNoh9L.jpeg" alt="Draft cards 2024">
+                    </div>
+                        <p class="league-caption">Draft 2024: Cartões de escolha de primeira rodada das franquias</p>
+                    </div>
+                    <div class="league-showcase">
+                        <div class="league-photo-vertical">
+                            <img src="https://i.imgur.com/NChErbl.jpeg" alt="Troféu LDG 2021">
+                        </div>
+                        <p class="league-caption">Troféu da LDG entregue ao campeão do Super Bowl em 2021</p>
+                    </div>
+                </div>
+                <div class="league-showcase">
+                    <div class="league-photo">
+                        <img src="https://i.imgur.com/4gU5yPT.jpeg" alt="LDG Awards 2023">
+                    </div>
+                    <p class="league-caption">LDG Awards 2023/24 - momentos épicos de celebração e confraternização da LDG</p>
+
+            </div>
+
+            <div class="section">
                 <h2 class="section-title position">A Vaga: O Comandante da sua Próxima Franquia</h2>
-<p class="section-text">
-Procuramos um <span class="highlight">General Manager</span> experiente e apaixonado para assumir o controle de uma das 12 franquias da LDG. Esta é sua oportunidade de fazer parte de uma liga <span class="highlight">competitiva e bem estruturada</span>, com regras balanceadas, sistema de dados históricos completo e uma comunidade ativa.
-</p>
-</div>
+                <p class="section-text">
+                    Procuramos um <span class="highlight">General Manager</span> experiente e apaixonado para assumir o controle de uma das 12 franquias da LDG. Esta é sua oportunidade de fazer parte de uma liga <span class="highlight">competitiva e bem estruturada</span>, com regras balanceadas, sistema de dados históricos completo e uma comunidade ativa.
+                </p>
+            </div>
 
-<div class="section">
-                <h2 class="section-title qualifications">Qualificações Essenciais para o Sucesso</h2>
+            <div class="section">
                 <h2 class="section-title qualifications">Qualificações essenciais para o sucesso</h2>
-<ul>
-<li><span class="highlight">Experiência mínima de 2 anos</span> em fantasy football OU acompanhamento ativo da NFL por anos com conhecimento básico de fantasy</li>
-<li><span class="highlight">Conhecimento sólido da NFL:</span> regras do jogo, principais jogadores e dinâmicas das temporadas</li>
-<li><span class="highlight">Compreensão de conceitos fundamentais:</span> waivers, trades, add/drop, formatos de pontuação</li>
-<li><span class="highlight">Diferenciais:</span> odiar time modinha, policiais e sulistas</li>
-</ul>
-</div>
+                <ul>
+                    <li><span class="highlight">Experiência mínima de 2 anos</span> em fantasy football OU acompanhamento ativo da NFL por anos com conhecimento básico de fantasy</li>
+                    <li><span class="highlight">Conhecimento sólido da NFL:</span> regras do jogo, principais jogadores e dinâmicas das temporadas</li>
+                    <li><span class="highlight">Compreensão de conceitos fundamentais:</span> waivers, trades, add/drop, formatos de pontuação</li>
+                    <li><span class="highlight">Diferenciais:</span> odiar time modinha, policiais e sulistas</li>
+                </ul>
+            </div>
 
-<div class="section">
-                <h2 class="section-title requirements">Requisitos para Embarcar nessa Jornada</h2>
+            <div class="section">
                 <h2 class="section-title requirements">Requisitos para embarcar nessa jornada</h2>
-<ul>
-<li><span class="highlight">Alto nível de comprometimento:</span> atividade constante durante toda a temporada</li>
-<li><span class="highlight">Pró-atividade em negociações:</span> disposição para propor e avaliar trades regularmente</li>
-<li><span class="highlight">Gestão ativa do roster:</span> monitoramento semanal de add/drops e ajustes de lineup</li>
-<li><span class="highlight">Interação social genuína:</span> participação nas conversas do grupo, memes, zoeiras, xingar os colegas e times lixos</li>
-<li><span class="highlight">Aceitação das regras específicas:</span> formato 12-team half PPR, TE Premium (full PPR), sem kickers, waiver em modo leilão (FAAB)</li>
-<li><span class="highlight">Personalidade aberta:</span> disposição para construir amizades e rivalidades sem rasgar</li>
-</ul>
-</div>
+                <ul>
+                    <li><span class="highlight">Alto nível de comprometimento:</span> atividade constante durante toda a temporada</li>
+                    <li><span class="highlight">Pró-atividade em negociações:</span> disposição para propor e avaliar trades regularmente</li>
+                    <li><span class="highlight">Gestão ativa do roster:</span> monitoramento semanal de add/drops e ajustes de lineup</li>
+                    <li><span class="highlight">Interação social genuína:</span> participação nas conversas do grupo, memes, zoeiras, xingar os colegas e times lixos</li>
+                    <li><span class="highlight">Aceitação das regras específicas:</span> formato 12-team half PPR, TE Premium (full PPR), sem kickers, waiver em modo leilão (FAAB)</li>
+                    <li><span class="highlight">Personalidade aberta:</span> disposição para construir amizades e rivalidades sem rasgar</li>
+                </ul>
+            </div>
 
-<div class="section">
-                <h2 class="section-title benefits">O Que Oferecemos (Além da Glória Eterna)</h2>
+            <div class="section">
                 <h2 class="section-title benefits">O que oferecemos (Além da Glória Eterna)</h2>
-<ul>
-<li><span class="highlight">Premiação física:</span> medalhas e troféus para os vencedores da temporada</li>
-<li><span class="highlight">Eventos presenciais exclusivos:</span> draft ao vivo e cerimônia de premiação</li>
-<li><span class="highlight">LDG Awards:</span> celebração épica com premiações aos piores do ano e momentos memoráveis</li>
-<li><span class="highlight">Dashboard personalizado:</span> acesso completo a dados históricos e estatísticas detalhadas</li>
-<li><span class="highlight">Franquia customizada:</span> nome e logo personalizados para sua identidade única</li>
-<li><span class="highlight">Comunidade consolidada:</span> grupo ativo de amigos que se conhecem há anos</li>
-<li><span class="highlight">Eventos em grupo:</span> Sempre há uma carona para os principais eventos: São Paulo Game e NFL in Brasa</li>
-<li><span class="highlight">Liga competitiva e balanceada:</span> regras testadas e aprovadas ao longo de 8 temporadas</li>
-</ul>
-</div>
+                <ul>
+                    <li><span class="highlight">Premiação física:</span> medalhas e troféus para os vencedores da temporada</li>
+                    <li><span class="highlight">Eventos presenciais exclusivos:</span> draft ao vivo e cerimônia de premiação</li>
+                    <li><span class="highlight">LDG Awards:</span> celebração épica com premiações aos piores do ano e momentos memoráveis</li>
+                    <li><span class="highlight">Dashboard personalizado:</span> acesso completo a dados históricos e estatísticas detalhadas</li>
+                    <li><span class="highlight">Franquia customizada:</span> nome e logo personalizados para sua identidade única</li>
+                    <li><span class="highlight">Comunidade consolidada:</span> grupo ativo de amigos que se conhecem há anos</li>
+                    <li><span class="highlight">Eventos em grupo:</span> Sempre há uma carona para os principais eventos: São Paulo Game e NFL in Brasa</li>
+                    <li><span class="highlight">Liga competitiva e balanceada:</span> regras testadas e aprovadas ao longo de 8 temporadas</li>
+                </ul>
+            </div>
 
-<div class="section cta-section">
-                <h2 class="section-title cta">Pronto para Aceitar o Desafio?</h2>
+            <div class="section cta-section">
                 <h2 class="section-title cta">Pronto para aceitar o desafio?</h2>
-<p class="section-text">
-Esta é uma <span class="highlight">oportunidade única</span> de se juntar a uma das ligas de fantasy football mais tradicionais e divertidas do Brasil. Se você tem o perfil que procuramos e está pronto para viver momentos épicos entre a glória e a zoeira, não perca tempo!
-</p>
+                <p class="section-text">
+                    Esta é uma <span class="highlight">oportunidade única</span> de se juntar a uma das ligas de fantasy football mais tradicionais e divertidas do Brasil. Se você tem o perfil que procuramos e está pronto para viver momentos épicos entre a glória e a zoeira, não perca tempo!
+                </p>
 
-<form name="contatoVagaFormspree" method="POST" action="https://formspree.io/f/xzzgazyz" class="contact-form">
-<p class="section-text">
-Preencha o formulário abaixo e entraremos em contato para garantir sua franquia na LDG 2025!
-</p>
-<input type="text" name="nome" placeholder="Seu Nome" required>
-<input type="email" name="email" placeholder="Seu Melhor E-mail" required>
-<input type="text" name="time" placeholder="Franquia que você torce" required>
-<input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>         
-<textarea name="mensagem" placeholder="Fale um pouco sobre sua experiência com Fantasy Football e por que você quer entrar na LDG." rows="4"></textarea>
-<button type="submit" class="cta-button">Enviar Candidatura</button>
-</form>
-<div id="form-feedback" class="form-message"></div>
+                <form name="contatoVagaFormspree" method="POST" action="https://formspree.io/f/xzzgazyz" class="contact-form">
+                    <p class="section-text">
+                        Preencha o formulário abaixo e entraremos em contato para garantir sua franquia na LDG 2025!
+                    </p>
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
+                    <input type="text" name="time" placeholder="Franquia que você torce" required>
+                    <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>        
+                    <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>         
+                    <textarea name="mensagem" placeholder="Fale um pouco sobre sua experiência com Fantasy Football e por que você quer entrar na LDG." rows="4"></textarea>
+                    <button type="submit" class="cta-button">Enviar Candidatura</button>
+                </form>
+                <div id="form-feedback" class="form-message"></div>
 
-</div>
-</div>
-</div>
+            </div>
+        </div>
+    </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-const form = document.querySelector('.contact-form');
-const formFeedback = document.getElementById('form-feedback');
-const submitButton = form.querySelector('.cta-button');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form');
+            const formFeedback = document.getElementById('form-feedback');
+            const submitButton = form.querySelector('.cta-button');
 
-form.addEventListener('submit', async function(event) {
-event.preventDefault(); // Impede o envio padrão do formulário e o recarregamento da página
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário e o recarregamento da página
 
-// Mostra que está carregando e desabilita o botão
-submitButton.textContent = 'Enviando...';
-submitButton.disabled = true;
-formFeedback.style.display = 'none'; // Esconde mensagens anteriores
+                // Mostra que está carregando e desabilita o botão
+                submitButton.textContent = 'Enviando...';
+                submitButton.disabled = true;
+                formFeedback.style.display = 'none'; // Esconde mensagens anteriores
 
-const formData = new FormData(form);
+                const formData = new FormData(form);
 
-try {
-// Envia os dados do formulário para o endpoint do Formspree
-const response = await fetch(form.action, { // Usa diretamente o 'action' do formulário
-method: 'POST',
-body: formData,
-headers: {
-'Accept': 'application/json' // Formspree aceita e responde com JSON
-}
-});
+                try {
+                    // Envia os dados do formulário para o endpoint do Formspree
+                    const response = await fetch(form.action, { // Usa diretamente o 'action' do formulário
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json' // Formspree aceita e responde com JSON
+                        }
+                    });
 
-if (response.ok) {
-formFeedback.textContent = 'Sua candidatura foi enviada com sucesso! Em breve entraremos em contato.';
-formFeedback.className = 'form-message success'; // Adiciona classe de sucesso
-formFeedback.style.display = 'block';
-form.reset(); // Limpa o formulário
-} else {
-// Tenta ler a mensagem de erro do Formspree
-const errorData = await response.json();
-let errorMessage = 'Ocorreu um erro ao enviar sua candidatura. Tente novamente mais tarde.';
-if (errorData && errorData.errors && errorData.errors.length > 0) {
-errorMessage = errorData.errors[0].message || errorMessage;
-} else if (errorData && errorData.message) {
-errorMessage = errorData.message;
-}
-formFeedback.textContent = errorMessage;
-formFeedback.className = 'form-message error'; // Adiciona classe de erro
-formFeedback.style.display = 'block';
-}
-} catch (error) {
-console.error('Erro na submissão do formulário:', error);
-formFeedback.textContent = 'Houve um problema de conexão. Por favor, verifique sua internet e tente novamente.';
-formFeedback.className = 'form-message error'; // Adiciona classe de erro
-formFeedback.style.display = 'block';
-} finally {
-// Reabilita o botão e restaura o texto
-submitButton.textContent = 'Enviar Candidatura';
-submitButton.disabled = false;
-}
-});
-});
-</script>
+                    if (response.ok) {
+                        formFeedback.textContent = 'Sua candidatura foi enviada com sucesso! Em breve entraremos em contato.';
+                        formFeedback.className = 'form-message success'; // Adiciona classe de sucesso
+                        formFeedback.style.display = 'block';
+                        form.reset(); // Limpa o formulário
+                    } else {
+                        // Tenta ler a mensagem de erro do Formspree
+                        const errorData = await response.json();
+                        let errorMessage = 'Ocorreu um erro ao enviar sua candidatura. Tente novamente mais tarde.';
+                        if (errorData && errorData.errors && errorData.errors.length > 0) {
+                            errorMessage = errorData.errors[0].message || errorMessage;
+                        } else if (errorData && errorData.message) {
+                             errorMessage = errorData.message;
+                                errorMessage = errorData.message;
+                        }
+                        formFeedback.textContent = errorMessage;
+                        formFeedback.className = 'form-message error'; // Adiciona classe de erro
+                        formFeedback.style.display = 'block';
+                    }
+                } catch (error) {
+                    console.error('Erro na submissão do formulário:', error);
+                    formFeedback.textContent = 'Houve um problema de conexão. Por favor, verifique sua internet e tente novamente.';
+                    formFeedback.className = 'form-message error'; // Adiciona classe de erro
+                    formFeedback.style.display = 'block';
+                } finally {
+                    // Reabilita o botão e restaura o texto
+                    submitButton.textContent = 'Enviar Candidatura';
+                    submitButton.disabled = false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
