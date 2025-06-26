@@ -228,12 +228,30 @@
             padding: 20px;
             margin: 20px 0;
             text-align: center;
+            flex: 0 10 auto;
+            width: auto;
         }
         
         .league-photo {
             width: 100%;
-            height: 200px; /* Altura fixa para a área da foto */
+            height: auto; /* Altura fixa para a área da foto */
             background: none; /* Remove qualquer background anterior caso houvesse */
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            display: flex; /* Para centralizar a imagem dentro da div */
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Garante que a imagem não "escape" da div */
+        }
+
+        .league-photo-vertical {
+            width: 100%;
+            height: auto; /* Altura fixa para a área da foto */
+            background: none; /* Remove qualquer background anterior caso houvesse */
+            overflow: hidden;
             border-radius: 8px;
             margin-bottom: 10px;
             opacity: 0.8;
@@ -248,13 +266,35 @@
             opacity: 1;
         }
 
+        .league-photo-vertical:hover {
+            opacity: 1;
+        }
+
         /* Estilo para a imagem DENTRO da div .league-photo */
         .league-photo img {
             width: 100%; /* Faz a imagem ocupar 100% da largura da div pai */
-            height: 100%; /* Faz a imagem ocupar 100% da altura da div pai */
+            height: 200px; 
             object-fit: cover; /* **ESSENCIAL**: Ajusta a imagem para cobrir a área, cortando o que for necessário, sem distorcer. */
             border-radius: 8px; /* Mantém as bordas arredondadas na imagem também */
+
         }
+
+        .league-photo-vertical img  {
+            width: 200px; 
+            height: auto; 
+            object-fit: cover; /* **ESSENCIAL**: Ajusta a imagem para cobrir a área, cortando o que for necessário, sem distorcer. */
+            border-radius: 8px; /* Mantém as bordas arredondadas na imagem também */
+            
+
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: flex-start; 
+            gap: 20px; 
+            flex-wrap: nowrap; 
+            overflow-x: auto; 
+            }
         
         .league-caption {
             font-size: 0.9em;
@@ -393,19 +433,37 @@
         
         <div class="content">
             <div class="section">
-                <h2 class="section-title about">Sobre a LDG</h2>
+                <h2 class="section-title about">Sobre nós</h2>
+                <div class="league-photo-vertical">
+                            <img src="https://i.imgur.com/qqQBbsK.png" alt="Logo LDG">
+                </div>
                 <p class="section-text">
                     Fundada em <span class="highlight">2017</span>, a <span class="highlight">LDG </span> não é apenas mais uma liga de fantasy football. Somos uma <span class="highlight">comunidade consolidada</span> que combina competitividade de alto nível com momentos épicos de descontração. Com <span class="highlight">8 anos de história</span> e tradições únicas, oferecemos uma experiência completa que vai muito além do fantasy tradicional. Um grupo seleto de GMs que preza pelo entretenimento e caos e que podem desfrutar da melhor experiência de fantasy football do Brasil.
                 </p>
                 <p class="section-text">
                     Nossa liga se destaca pelos <span class="highlight">eventos presenciais exclusivos</span>, incluindo drafts ao vivo para membros de Campinas e região, cerimônias de premiação com troféus e medalhas físicas, e o aguardado <span class="highlight">LDG Awards</span> anual, onde celebramos não apenas os campeões, mas também os melhores (e piores) memes da temporada.
                 </p>
+
+                <div class="gallery-container">
+                    <div class="league-showcase">
+                    <div class="league-photo-vertical">
+                            <img src="https://i.imgur.com/YtNoh9L.jpeg" alt="Draft cards 2024">
+                    </div>
+                        <p class="league-caption">Draft 2024: Cartões de escolha de primeira rodada das franquias</p>
+                    </div>
+                    <div class="league-showcase">
+                        <div class="league-photo-vertical">
+                            <img src="https://i.imgur.com/NChErbl.jpeg" alt="Troféu LDG 2021">
+                        </div>
+                        <p class="league-caption">Troféu da LDG entregue ao campeão do Super Bowl em 2021</p>
+                    </div>
+                </div>
                 <div class="league-showcase">
                     <div class="league-photo">
                         <img src="https://i.imgur.com/4gU5yPT.jpeg" alt="LDG Awards 2023">
                     </div>
                     <p class="league-caption">LDG Awards 2023/24 - momentos épicos de celebração e confraternização da LDG</p>
-                </div>
+
             </div>
 
             <div class="section">
