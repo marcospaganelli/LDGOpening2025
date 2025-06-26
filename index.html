@@ -24,7 +24,7 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 800px; /* Mantém 800px para desktop */
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -233,7 +233,7 @@
         
         .league-photo {
             width: 100%;
-            height: auto;
+            height: auto; 
             background: none;
             overflow: hidden;
             border-radius: 8px;
@@ -248,7 +248,7 @@
 
         .league-photo-vertical {
             width: 100%;
-            height: auto;
+            height: auto; 
             background: none;
             overflow: hidden;
             border-radius: 8px;
@@ -271,9 +271,9 @@
 
         /* Estilo para a imagem DENTRO da div .league-photo */
         .league-photo img {
-            width: 100%;
-            height: 200px; /* Altura fixa para as imagens horizontais */
-            object-fit: cover;
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
             border-radius: 8px;
         }
 
@@ -290,14 +290,14 @@
             justify-content: flex-start;
             gap: 20px;
             flex-wrap: wrap; /* ALTERADO: Permite que os itens quebrem para a próxima linha */
-            overflow-x: auto; /* Mantém a rolagem horizontal se necessário */
+            overflow-x: auto; 
             padding-bottom: 10px;
         }
 
         /* NOVO: Ajuste para os itens da galeria para que não encolham agressivamente */
         .league-showcase {
-            flex: 0 0 auto; /* Não cresce, não encolhe, baseia-se no conteúdo */
-            min-width: 250px; /* Adiciona um tamanho mínimo para as fotos no desktop */
+            flex: 0 0 auto; 
+            min-width: 250px; 
         }
         
         .league-caption {
@@ -308,45 +308,45 @@
 
         /* Estilos para o formulário de contato */
         .contact-form {
-            margin-top: 25px; /* Espaço entre o texto e o formulário */
+            margin-top: 25px; 
             display: flex;
             flex-direction: column;
-            gap: 15px; /* Espaço entre os campos do formulário */
-            max-width: 450px; /* Limita a largura do formulário para não ficar muito esticado em telas grandes */
-            margin-left: auto; /* Centraliza o formulário */
-            margin-right: auto; /* Centraliza o formulário */
-            padding: 20px; /* Espaçamento interno */
+            gap: 15px; 
+            max-width: 450px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            padding: 20px; 
             border-radius: 10px;
-            background: rgba(0, 0, 0, 0.2); /* Um leve fundo escuro para destacar no azul */
+            background: rgba(0, 0, 0, 0.2); 
         }
 
         .contact-form .section-text {
-            margin-bottom: 5px; /* Ajusta espaçamento do texto do formulário */
+            margin-bottom: 5px; 
         }
 
         .contact-form input[type="text"],
         .contact-form input[type="email"],
         .contact-form textarea {
             padding: 12px;
-            border: none; /* Remove borda padrão */
+            border: none; 
             border-radius: 8px;
             font-size: 1em;
-            width: 100%; /* Ocupa a largura total do contêiner do formulário */
-            background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
-            color: #333; /* Cor do texto digitado */
-            outline: none; /* Remove a borda de foco padrão */
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para um visual melhor */
+            width: 100%; 
+            background-color: rgba(255, 255, 255, 0.95); 
+            color: #333; 
+            outline: none; 
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
             transition: all 0.2s ease-in-out;
         }
 
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
-            color: #888; /* Cor do texto do placeholder */
+            color: #888; 
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
-            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Borda de foco azul */
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); 
         }
 
         /* Estilos para Mensagens de Feedback do Formulário */
@@ -355,19 +355,19 @@
             padding: 15px;
             border-radius: 8px;
             font-weight: bold;
-            display: none; /* Começa escondido, o JS vai mostrar */
+            display: none; 
             text-align: center;
         }
 
         .form-message.success {
-            background-color: #d4edda; /* Verde claro */
-            color: #155724; /* Verde escuro */
+            background-color: #d4edda; 
+            color: #155724; 
             border: 1px solid #c3e6cb;
         }
 
         .form-message.error {
-            background-color: #f8d7da; /* Vermelho claro */
-            color: #721c24; /* Vermelho escuro */
+            background-color: #f8d7da; 
+            color: #721c24; 
             border: 1px solid #f5c6cb;
         }
 
@@ -391,6 +391,10 @@
             
             .section {
                 padding: 20px 15px;
+                /* Adiciona largura para seções em mobile */
+                width: calc(100% - 30px); /* 100% da largura do .content menos o padding horizontal */
+                margin-left: auto;
+                margin-right: auto;
             }
             
             .stats {
@@ -398,21 +402,21 @@
                 align-items: center;
             }
 
-            /* NOVO/ALTERADO: Força os itens da galeria a serem 100% largos em telas pequenas */
+            /* Força os itens da galeria a serem 100% largos em telas pequenas */
             .league-showcase {
-                flex: 0 0 100%; /* Cada item ocupa a largura total */
-                min-width: unset; /* Remove o min-width para mobile */
+                flex: 0 0 100%; 
+                min-width: unset; 
             }
 
             .league-photo img,
             .league-photo-vertical img {
-                width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
-                height: 180px; /* Ajuste a altura conforme necessário para o mobile */
-                object-fit: cover; /* Mantém o corte se a proporção não for exata */
+                width: 100%; 
+                height: 180px; 
+                object-fit: cover; 
             }
 
             .contact-form {
-                max-width: 100%; /* Em telas menores, ocupa mais largura */
+                max-width: 100%; 
                 padding: 15px;
             }
         }
@@ -539,7 +543,7 @@
                     <input type="text" name="nome" placeholder="Seu Nome" required>
                     <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
                     <input type="text" name="time" placeholder="Franquia que você torce" required>
-                    <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>        
+                    <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>         
                     <textarea name="mensagem" placeholder="Fale um pouco sobre sua experiência com Fantasy Football e por que você quer entrar na LDG." rows="4"></textarea>
                     <button type="submit" class="cta-button">Enviar Candidatura</button>
                 </form>
@@ -587,7 +591,7 @@
                         if (errorData && errorData.errors && errorData.errors.length > 0) {
                             errorMessage = errorData.errors[0].message || errorMessage;
                         } else if (errorData && errorData.message) {
-                             errorMessage = errorData.message;
+                                errorMessage = errorData.message;
                         }
                         formFeedback.textContent = errorMessage;
                         formFeedback.className = 'form-message error'; // Adiciona classe de erro
