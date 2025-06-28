@@ -1,4 +1,4 @@
-<!DOCTYPE html>More actions
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,10 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         /* Importa fontes do Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Roboto:wght@300;400;500;700&display=swap');
-
+        
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
@@ -22,10 +22,9 @@
             min-height: 100vh;
             padding: 20px;
         }
-
+        
         .container {
             max-width: 800px;
-            max-width: 800px; /* Mantém 800px para desktop */
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
@@ -33,7 +32,7 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
         }
-
+        
         .header {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             color: white;
@@ -42,7 +41,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .header::before {
             content: '';
             position: absolute;
@@ -55,12 +54,12 @@
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>');
             animation: float 20s infinite ease-in-out;
         }
-
+        
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-
+        
         .main-title {
             font-family: 'Anton', sans-serif;
             font-size: 2.5em;
@@ -71,18 +70,18 @@
             z-index: 1;
             letter-spacing: 1px;
         }
-
+        
         .subtitle {
             font-size: 1.2em;
             opacity: 0.9;
             position: relative;
             z-index: 1;
         }
-
+        
         .content {
             padding: 40px 30px;
         }
-
+        
         .section {
             margin-bottom: 35px;
             padding: 25px;
@@ -91,12 +90,12 @@
             border-left: 5px solid #fbbf24;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
+        
         .section:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-
+        
         .section-title {
             font-family: 'Anton', sans-serif;
             font-size: 1.4em;
@@ -107,42 +106,42 @@
             align-items: center;
             letter-spacing: 0.5px;
         }
-
+        
         .section-title::before {
             content: '🏆';
             margin-right: 10px;
             font-size: 1.2em;
         }
-
+        
         .section-title.about::before { content: '🏈'; }
         .section-title.position::before { content: '👑'; }
         .section-title.qualifications::before { content: '📋'; }
         .section-title.requirements::before { content: '⚡'; }
         .section-title.benefits::before { content: '🎁'; }
         .section-title.cta::before { content: '🚀'; } /* Icone da seção de CTA */
-
+        
         .section-text {
             color: #333;
             margin-bottom: 15px;
             text-align: center;
         }
-
+        
         .highlight {
             font-weight: bold;
             color: #1e3a8a;
         }
-
+        
         ul {
             list-style: none;
             padding-left: 0;
         }
-
+        
         li {
             padding: 8px 0;
             position: relative;
             padding-left: 25px;
         }
-
+        
         li::before {
             content: '▶';
             color: #fbbf24;
@@ -150,7 +149,7 @@
             position: absolute;
             left: 0;
         }
-
+        
         /* Estilo para a seção de Chamada para Ação (CTA) */
         .cta-section {
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
@@ -169,7 +168,7 @@
         .cta-section .highlight {
             color: #fbbf24; /* O amarelo mais para laranja que você pediu */
         }
-
+        
         .cta-button {
             display: inline-block;
             background: #fbbf24;
@@ -185,20 +184,20 @@
             cursor: pointer; /* Indica que é clicável */
             border: none; /* Remove borda padrão de botão */
         }
-
+        
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             background: #f59e0b;
         }
-
+        
         .stats {
             display: flex;
             justify-content: space-around;
             margin: 20px 0;
             flex-wrap: wrap;
         }
-
+        
         .stat-item {
             text-align: center;
             padding: 10px;
@@ -207,7 +206,7 @@
             margin: 5px;
             min-width: 120px;
         }
-
+        
         .stat-number {
             font-size: 2em;
             font-weight: bold;
@@ -216,36 +215,63 @@
             display: block;
             opacity: 0.9;
         }
-
+        
         .stat-label {
             font-size: 0.9em;
             opacity: 0.9;
         }
-
+        
         /* Estilo para a seção de destaque da liga com a foto */
         .league-showcase {
             background: rgba(30, 58, 138, 0.05);
             border-radius: 10px;
             padding: 20px;
             margin: 20px 0;
-            text-align: center;
-            /* REMOVIDO: flex: 0 10 auto; - será controlado por flex-wrap no container e media queries */
+            text-align: center ;
         }
 
+        .league-showcase-vertical {
+            background: rgba(30, 58, 138, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            width: 45%;
+            height: auto;
+            text-align: center;
+            text-wrap: wrap;
+        }
+        
         .league-photo {
             width: 100%;
-            height: auto;
-            height: auto; 
-            background: none;
-            overflow: hidden;
+            height: 200px; /* Altura fixa para a área da foto */
+            background: none; /* Remove qualquer background anterior caso houvesse */
             border-radius: 8px;
             margin-bottom: 10px;
             opacity: 0.8;
             transition: opacity 0.3s ease;
-            display: flex;
+            display: flex; /* Para centralizar a imagem dentro da div */
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            overflow: hidden; /* Garante que a imagem não "escape" da div */
+        }
+        
+        .league-photo:hover {
+            opacity: 1;
+        }
+
+        /* Estilo para a imagem DENTRO da div .league-photo */
+        .league-photo img {
+            width: 100%; /* Faz a imagem ocupar 100% da largura da div pai */
+            height: 100%; /* Faz a imagem ocupar 100% da altura da div pai */
+            object-fit: cover; /* **ESSENCIAL**: Ajusta a imagem para cobrir a área, cortando o que for necessário, sem distorcer. */
+            border-radius: 8px; /* Mantém as bordas arredondadas na imagem também */
+        }
+        
+        .container-showcases {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         .league-photo-vertical {
@@ -264,49 +290,12 @@
             overflow: hidden;
         }
 
-        .league-photo:hover {
-            opacity: 1;
-        }
-
-        .league-photo-vertical:hover {
-            opacity: 1;
-        }
-
-        /* Estilo para a imagem DENTRO da div .league-photo */
-        .league-photo img {
-            width: 100%;
-            height: 200px; /* Altura fixa para as imagens horizontais */
-            object-fit: cover;
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
-            border-radius: 8px;
-        }
-
         .league-photo-vertical img {
             width: 100%; /* ALTERADO: Para ocupar a largura total do contêiner em mobile */
             height: auto; /* ALTERADO: Altura automática para manter proporção */
             max-height: 250px; /* NOVO: Limita a altura máxima para imagens verticais */
             object-fit: contain; /* ALTERADO: Garante que a imagem inteira seja visível */
             border-radius: 8px;
-        }
-
-        .gallery-container {
-            display: flex;
-            justify-content: flex-start;
-            gap: 20px;
-            flex-wrap: wrap; /* ALTERADO: Permite que os itens quebrem para a próxima linha */
-            overflow-x: auto; /* Mantém a rolagem horizontal se necessário */
-            overflow-x: auto; 
-            padding-bottom: 10px;
-        }
-
-        /* NOVO: Ajuste para os itens da galeria para que não encolham agressivamente */
-        .league-showcase {
-            flex: 0 0 auto; /* Não cresce, não encolhe, baseia-se no conteúdo */
-            min-width: 250px; /* Adiciona um tamanho mínimo para as fotos no desktop */
-            flex: 0 0 auto; 
-            min-width: 250px; 
         }
 
         .league-caption {
@@ -318,7 +307,6 @@
         /* Estilos para o formulário de contato */
         .contact-form {
             margin-top: 25px; /* Espaço entre o texto e o formulário */
-            margin-top: 25px; 
             display: flex;
             flex-direction: column;
             gap: 15px; /* Espaço entre os campos do formulário */
@@ -326,19 +314,12 @@
             margin-left: auto; /* Centraliza o formulário */
             margin-right: auto; /* Centraliza o formulário */
             padding: 20px; /* Espaçamento interno */
-            gap: 15px; 
-            max-width: 450px; 
-            margin-left: auto; 
-            margin-right: auto; 
-            padding: 20px; 
             border-radius: 10px;
             background: rgba(0, 0, 0, 0.2); /* Um leve fundo escuro para destacar no azul */
-            background: rgba(0, 0, 0, 0.2); 
         }
 
         .contact-form .section-text {
             margin-bottom: 5px; /* Ajusta espaçamento do texto do formulário */
-            margin-bottom: 5px; 
         }
 
         .contact-form input[type="text"],
@@ -346,7 +327,6 @@
         .contact-form textarea {
             padding: 12px;
             border: none; /* Remove borda padrão */
-            border: none; 
             border-radius: 8px;
             font-size: 1em;
             width: 100%; /* Ocupa a largura total do contêiner do formulário */
@@ -354,24 +334,17 @@
             color: #333; /* Cor do texto digitado */
             outline: none; /* Remove a borda de foco padrão */
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna para um visual melhor */
-            width: 100%; 
-            background-color: rgba(255, 255, 255, 0.95); 
-            color: #333; 
-            outline: none; 
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); 
             transition: all 0.2s ease-in-out;
         }
 
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
             color: #888; /* Cor do texto do placeholder */
-            color: #888; 
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus {
             box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Borda de foco azul */
-            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.5), inset 0 1px 3px rgba(0, 0, 0, 0.1); 
         }
 
         /* Estilos para Mensagens de Feedback do Formulário */
@@ -381,23 +354,18 @@
             border-radius: 8px;
             font-weight: bold;
             display: none; /* Começa escondido, o JS vai mostrar */
-            display: none; 
             text-align: center;
         }
 
         .form-message.success {
             background-color: #d4edda; /* Verde claro */
             color: #155724; /* Verde escuro */
-            background-color: #d4edda; 
-            color: #155724; 
             border: 1px solid #c3e6cb;
         }
 
         .form-message.error {
             background-color: #f8d7da; /* Vermelho claro */
             color: #721c24; /* Vermelho escuro */
-            background-color: #f8d7da; 
-            color: #721c24; 
             border: 1px solid #f5c6cb;
         }
 
@@ -406,54 +374,30 @@
             .container {
                 margin: 10px;
             }
-
+            
             .header {
                 padding: 30px 20px;
             }
-
+            
             .main-title {
                 font-size: 2em;
             }
-
+            
             .content {
                 padding: 30px 20px;
             }
-
+            
             .section {
                 padding: 20px 15px;
-                /* Adiciona largura para seções em mobile */
-                width: calc(100% - 30px); /* 100% da largura do .content menos o padding horizontal */
-                margin-left: auto;
-                margin-right: auto;
             }
-
+            
             .stats {
                 flex-direction: column;
                 align-items: center;
             }
 
-            /* NOVO/ALTERADO: Força os itens da galeria a serem 100% largos em telas pequenas */
-            /* Força os itens da galeria a serem 100% largos em telas pequenas */
-            .league-showcase {
-                flex: 0 0 100%; /* Cada item ocupa a largura total */
-                min-width: unset; /* Remove o min-width para mobile */
-                flex: 0 0 100%; 
-                min-width: unset; 
-            }
-
-            .league-photo img,
-            .league-photo-vertical img {
-                width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
-                height: 180px; /* Ajuste a altura conforme necessário para o mobile */
-                object-fit: cover; /* Mantém o corte se a proporção não for exata */
-                width: 100%; 
-                height: 180px; 
-                object-fit: cover; 
-            }
-
             .contact-form {
                 max-width: 100%; /* Em telas menores, ocupa mais largura */
-                max-width: 100%; 
                 padding: 15px;
             }
         }
@@ -464,7 +408,7 @@
         <div class="header">
             <h1 class="main-title">VAGA DISPONÍVEL: LDG GENERAL MANAGER</h1>
             <p class="subtitle">Oportunidade única de se juntar à maior liga do Brasil</p>
-
+            
             <div class="stats">
                 <div class="stat-item">
                     <span class="stat-number">8º</span>
@@ -488,7 +432,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="content">
             <div class="section">
                 <h2 class="section-title about">Sobre nós</h2>
@@ -501,19 +445,19 @@
                 <p class="section-text">
                     Nossa liga se destaca pelos <span class="highlight">eventos presenciais exclusivos</span>, incluindo drafts ao vivo para membros de Campinas e região, cerimônias de premiação com troféus e medalhas físicas, e o aguardado <span class="highlight">LDG Awards</span> anual, onde celebramos não apenas os campeões, mas também os melhores (e piores) memes da temporada.
                 </p>
-
-                <div class="gallery-container">
-                    <div class="league-showcase">
-                    <div class="league-photo-vertical">
-                            <img src="https://i.imgur.com/YtNoh9L.jpeg" alt="Draft cards 2024">
-                    </div>
-                        <p class="league-caption">Draft 2024: Cartões de escolha de primeira rodada das franquias</p>
-                    </div>
-                    <div class="league-showcase">
+                <div class = "container-showcases">
+                    <div class="league-showcase-vertical">
                         <div class="league-photo-vertical">
-                            <img src="https://i.imgur.com/NChErbl.jpeg" alt="Troféu LDG 2021">
+                                <img src="https://i.imgur.com/YtNoh9L.jpeg" alt="Draft cards 2024">
                         </div>
-                        <p class="league-caption">Troféu da LDG entregue ao campeão do Super Bowl em 2021</p>
+                            <p class="league-caption">Draft 2024: Cartões de escolha de primeira rodada das franquias</p>
+                    
+                    </div>
+                    <div class="league-showcase-vertical">
+                        <div class="league-photo-vertical">
+                                <img src="https://i.imgur.com/NChErbl.jpeg" alt="Troféu LDG 2021">
+                        </div>
+                            <p class="league-caption">Troféu da LDG entregue ao campeão do Super Bowl em 2021</p>
                     </div>
                 </div>
                 <div class="league-showcase">
@@ -521,7 +465,7 @@
                         <img src="https://i.imgur.com/4gU5yPT.jpeg" alt="LDG Awards 2023">
                     </div>
                     <p class="league-caption">LDG Awards 2023/24 - momentos épicos de celebração e confraternização da LDG</p>
-
+                </div>
             </div>
 
             <div class="section">
@@ -572,7 +516,7 @@
                 <p class="section-text">
                     Esta é uma <span class="highlight">oportunidade única</span> de se juntar a uma das ligas de fantasy football mais tradicionais e divertidas do Brasil. Se você tem o perfil que procuramos e está pronto para viver momentos épicos entre a glória e a zoeira, não perca tempo!
                 </p>
-
+                
                 <form name="contatoVagaFormspree" method="POST" action="https://formspree.io/f/xzzgazyz" class="contact-form">
                     <p class="section-text">
                         Preencha o formulário abaixo e entraremos em contato para garantir sua franquia na LDG 2025!
@@ -580,7 +524,6 @@
                     <input type="text" name="nome" placeholder="Seu Nome" required>
                     <input type="email" name="email" placeholder="Seu Melhor E-mail" required>
                     <input type="text" name="time" placeholder="Franquia que você torce" required>
-                    <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>        
                     <input type="text" name="local" placeholder="Onde você mora? (Cidade, estado)" required>         
                     <textarea name="mensagem" placeholder="Fale um pouco sobre sua experiência com Fantasy Football e por que você quer entrar na LDG." rows="4"></textarea>
                     <button type="submit" class="cta-button">Enviar Candidatura</button>
@@ -630,7 +573,6 @@
                             errorMessage = errorData.errors[0].message || errorMessage;
                         } else if (errorData && errorData.message) {
                              errorMessage = errorData.message;
-                                errorMessage = errorData.message;
                         }
                         formFeedback.textContent = errorMessage;
                         formFeedback.className = 'form-message error'; // Adiciona classe de erro
